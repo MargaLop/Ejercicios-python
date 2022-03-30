@@ -9,7 +9,6 @@ def num_jugador():
     1 - Piedra
     2 - Papel
     3 - Tijera
-
     ¿Piedra, papel o tijera?:'''))
 
 
@@ -26,6 +25,8 @@ def comparar_jugadas():
         pedir_jugador = num_jugador()
         numero_programa = num_programa()
 
+        representacion_humano(pedir_jugador)
+        representacion_programa(numero_programa)
         
         
         if numero_programa == pedir_jugador:
@@ -51,7 +52,7 @@ def comparar_jugadas():
 
         
 
-        print(numero_programa)
+    
         repeticion = ""
         while not repeticion== 'N' and not repeticion == 'n' and not repeticion== 'S' and not repeticion == 's':
             repeticion = input('¿Quieres continuar? S/N')
@@ -60,9 +61,8 @@ def comparar_jugadas():
 
 
 
-def representacion_humano():
+def representacion_humano(pedir_jugador):
     
-    pedir_jugador = num_jugador()
 
     if pedir_jugador == 1:
         print('''Has elegido PIEDRA:
@@ -74,7 +74,7 @@ def representacion_humano():
          ---.__(___)
         ''')
 
-    elif pedir_jugador == 1:
+    elif pedir_jugador == 2:
         print('''Has elegido PAPEL:
      
             _______
@@ -85,7 +85,7 @@ def representacion_humano():
         ---.__________)
         ''')
 
-    elif pedir_jugador == 1:
+    elif pedir_jugador == 3:
         print('''Has elegido TIJERA:
      
             _______
@@ -97,10 +97,8 @@ def representacion_humano():
         ''')
 
 
-def representacion_programa():
+def representacion_programa(numero_programa):
     
-    numero_programa = num_programa()
-
     if numero_programa == 1:
         print('''He elegido PIEDRA:
             _______
@@ -111,7 +109,7 @@ def representacion_programa():
          ---.__(___)
         ''')
 
-    elif numero_programa == 1:
+    elif numero_programa == 2:
         print('''He elegido PAPEL:
      
             _______
@@ -122,7 +120,7 @@ def representacion_programa():
         ---.__________)
         ''')
 
-    elif numero_programa == 1:
+    elif numero_programa == 3:
         print('''He elegido TIJERA:
      
             _______
@@ -133,8 +131,6 @@ def representacion_programa():
         ---.__(___)
         ''')
 
+
+
 comparar_jugadas()
-representacion_humano()
-representacion_programa()
-
-
